@@ -10,9 +10,6 @@ import jakarta.persistence.Table;
 @Table(name = "users")
 public class User {
 
-
-
-
     public User() { }
     public User(String name, String email, String password) {
         this.name = name;

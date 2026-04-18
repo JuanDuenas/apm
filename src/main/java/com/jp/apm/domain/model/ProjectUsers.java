@@ -9,12 +9,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "project_users")
-public class Project_users {
+public class ProjectUsers {
 
-    public Project_users() { }
-    public Project_users(Project projectId, User userId, Role roleId) {
-        this.project_Id = projectId;
-        this.user_Id = userId;
+    public ProjectUsers() { }
+    public ProjectUsers(Project project, User user, Role role) {
+        this.project = project;
+        this.user = user;
+        this.role = role;
     }
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -22,29 +23,29 @@ public class Project_users {
 
     @ManyToOne
     @JoinColumn(name = "project_id", referencedColumnName = "id")
-    private Project project_Id;
+    private Project project;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user_Id;
+    private User user;
     
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
-    private Role role_Id;
+    private Role role;
 
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
 
-    public Project getProjectId() { return project_Id; }
+    public Project getProject() { return project; }
 
-    public void setProjectId(Project projectId) { this.project_Id = projectId; }
+    public void setProject(Project project) { this.project = project; }
 
-    public User getUserId() { return user_Id; }
+    public User getUser() { return user; }
 
-    public void setUserId(User userId) { this.user_Id = userId; }
+    public void setUser(User user) { this.user = user; }
 
-    public Role getRoleId() { return role_Id; }
+    public Role getRole() { return role; }
 
-    public void setRoleId(Role roleId) { this.role_Id = roleId; }
+    public void setRole(Role role) { this.role = role; }
 }
