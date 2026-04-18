@@ -9,10 +9,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "project_users")
-public class ProjectUsers {
+public class ProjectUser {
 
-    public ProjectUsers() { }
-    public ProjectUsers(Project project, User user, Role role) {
+    public ProjectUser() { }
+    public ProjectUser(Project project, User user, Role role) {
         this.project = project;
         this.user = user;
         this.role = role;
